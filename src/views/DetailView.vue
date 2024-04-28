@@ -17,7 +17,7 @@
                 referrerpolicy="strict-origin-when-cross-origin"
                 allowfullscreen></iframe>
         <p>
-          Score: <v-icon small class="mr-1" color="yellow">mdi-star</v-icon> {{ animeDetail.score }}
+          Score: <v-icon small class="mr-1" color="yellow">mdi-star</v-icon> {{ animeDetail.score ?? '-' }}
         </p>
         <p>Status: {{ animeDetail.status }}</p>
         <p>{{ animeDetail.synopsis }}</p>

@@ -23,7 +23,10 @@
       </v-col>
     </v-row>
 
-    <h2 class="my-5">Season Now</h2>
+    <div class="my-5 d-flex align-center justify-space-between">
+      <h2 class="my-5">Season Now</h2>
+      <p style="cursor: pointer" @click="goToSeasonNow">View More ...</p>
+    </div>
     <v-row>
       <v-col
           v-for="now in listAnimeNow"
@@ -35,6 +38,7 @@
         <v-skeleton-loader v-if="isLoading" type="list-item-avatar, text" />
         <ImageCard
             v-else
+            @on-click="goToDetailPage(now.mal_id)"
             :image="now.images.webp.large_image_url"
             :text="now.title"
         />
@@ -93,6 +97,9 @@
       },
       goToRecommendation(){
         this.$router.push({name: 'recommendation'})
+      },
+      goToSeasonNow(){
+        this.$router.push({name: 'season-now'})
       },
     },
     mounted() {

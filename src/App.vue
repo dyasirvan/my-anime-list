@@ -25,6 +25,9 @@ export default {
     goToHome(){
       this.$router.push({name: 'home'})
     }
+  },
+  created () {
+    document.title = "My Anime List";
   }
 };
 </script>
