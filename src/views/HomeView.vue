@@ -1,7 +1,10 @@
 <template>
   <v-container>
     <GradientCarousel :list-anime-recommendations="listAnimeRecommendations" :is-loading="isLoading"/>
-    <h2 class="my-5">Recommendations</h2>
+    <div class="my-5 d-flex align-center justify-space-between">
+      <h2>Recommendations</h2>
+      <p style="cursor: pointer" @click="goToRecommendation">View More ...</p>
+    </div>
     <v-row>
       <v-col
         v-for="anime in listAnimeRecommendations"
@@ -87,7 +90,10 @@
       },
       goToDetailPage(id){
         this.$router.push({name: 'detail', params: {id}})
-      }
+      },
+      goToRecommendation(){
+        this.$router.push({name: 'recommendation'})
+      },
     },
     mounted() {
       this.fetchAnimeRecommendations()

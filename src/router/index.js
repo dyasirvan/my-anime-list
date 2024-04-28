@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import DetailView from "@/views/DetailView.vue";
+import RecommendationView from "@/views/RecommendationView.vue";
 
 Vue.use(VueRouter)
 
@@ -12,9 +13,14 @@ const routes = [
     component: HomeView
   },
   {
-    path: '/:id',
+    path: '/detail/:id',
     name: 'detail',
     component: DetailView
+  },
+  {
+    path: '/recommendation',
+    name: 'recommendation',
+    component: RecommendationView
   }
 ]
 
