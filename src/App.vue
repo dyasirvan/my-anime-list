@@ -6,7 +6,7 @@
       dark
     >
       <div class="d-flex align-center">
-        <v-toolbar-title>My Anime List</v-toolbar-title>
+        <v-toolbar-title style="cursor: pointer" @click="goToHome">My Anime List</v-toolbar-title>
       </div>
 
     </v-app-bar>
@@ -21,9 +21,10 @@
 
 export default {
   name: 'App',
-
-  data: () => ({
-    //
-  }),
+  methods: {
+    goToHome(){
+      this.$router.push({name: 'home'})
+    }
+  }
 };
 </script>
